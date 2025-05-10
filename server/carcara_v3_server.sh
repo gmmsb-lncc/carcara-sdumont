@@ -13,43 +13,6 @@
 # pip install --upgrade pip
 # pip install huggingface_hub transformers torch torchvision torchaudio numpy scipy pandas tqdm
 
-# 🔹 Funções de Download do Modelo
-download_model_quantized_simple() {
-    echo "🔹 Baixando apenas o modelo quantizado..."
-    python3 - <<EOF
-from huggingface_hub import snapshot_download
-snapshot_download(
-    repo_id="unsloth/DeepSeek-R1-GGUF",
-    local_dir="DeepSeek-R1-GGUF",
-    allow_patterns=["*UD-IQ1_S*"]
-)
-EOF
-}
-
-download_model_quantized_complete() {
-    echo "🔹 Baixando modelo DeepSeek-V3 quantizado e tokenizador..."
-    python3 - <<EOF
-import os
-from huggingface_hub import snapshot_download
-from transformers import AutoTokenizer
-
-# Baixar shards do modelo Q4_K_M
-snapshot_download(
-    repo_id="unsloth/DeepSeek-V3-GGUF",
-    local_dir="DeepSeek-V3-GGUF",
-    allow_patterns=["DeepSeek-V3-Q4_K_M/*.gguf"],
-    resume_download=True
-)
-
-# Baixar tokenizador se ainda não existir
-tokenizer_path = "DeepSeek-V3-GGUF/tokenizer"
-if not os.path.exists(tokenizer_path):
-    tokenizer = AutoTokenizer.from_pretrained("unsloth/DeepSeek-V3")
-    tokenizer.save_pretrained(tokenizer_path)
-EOF
-}
-
-
 
 # 🔹 Função para Configurar Parâmetros (todos os parâmetros serão passados pelo main)
 set_parameters() {
@@ -119,9 +82,6 @@ set_parameters() {
 
 main() {
     echo "🔹 Iniciando a execução do script..."
-
-    # 🔹 Escolha o tipo de download: Simple ou Complete
-    #download_model_quantized_complete  
     
     # Pode ser alterado para download_model_quantized_simple
     # Caso altere o método de quantização, atualize também o sufixo de MODEL_DIR
