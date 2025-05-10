@@ -217,10 +217,10 @@ NODE3_MAX_CONTEXT=8192
 NODE4_MAX_CONTEXT=8192
 
 # HTTP Endpoints of each node's API
-NODE1_ENDPOINT=http://localhost:9090/v1/chat/completions
-NODE2_ENDPOINT=http://localhost:9091/v1/chat/completions
-NODE3_ENDPOINT=http://localhost:9092/v1/chat/completions
-NODE4_ENDPOINT=http://localhost:9093/v1/chat/completions
+NODE1_ENDPOINT=http://localhost:PORT_A/v1/chat/completions
+NODE2_ENDPOINT=http://localhost:PORT_B/v1/chat/completions
+NODE3_ENDPOINT=http://localhost:PORT_C/v1/chat/completions
+NODE4_ENDPOINT=http://localhost:PORT_D/v1/chat/completions
 
 # Authentication keys (if any)
 NODE1_API_KEY=
