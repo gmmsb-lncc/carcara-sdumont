@@ -121,8 +121,3 @@ bash carcara_v3_server_nodeN.sh
 
 Replace `N` with the corresponding node number.
 
----
-
-## License
-
-This script was developed for use in distributed inference environments focused on quantized models from the DeepSeek family. It may be freely adapted for other GGUF models compatible with `llama.cpp`.
