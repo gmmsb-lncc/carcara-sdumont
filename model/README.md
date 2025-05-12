@@ -77,7 +77,3 @@ nome_modelo_destino = "DeepSeek-V3-0324-Q4_K_M"
 - The script **does not download the tokenizer**. If needed, use the `AutoTokenizer` method manually in another script.
 
 ---
-
-## License
-
-This script was developed to facilitate selective downloads of Hugging Face models for controlled inference environments.
