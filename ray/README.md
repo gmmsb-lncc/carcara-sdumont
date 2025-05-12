@@ -146,9 +146,4 @@ The script generates detailed logs for:
 
 To safely shut down the router, the `shutdown()` method closes the active HTTP session from `aiohttp`.
 
----
 
-## License
-
-This router was developed for use in research environments and applications with multiple inference nodes based on `llama-server`.  
-Feel free to adapt and extend it as needed.
