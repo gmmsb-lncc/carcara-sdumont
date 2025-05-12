@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15390358.svg)](https://doi.org/10.5281/zenodo.15390358)
+
 # Carcará Setup
 
 This repository gathers instructions to configure a multi-GPU environment, run and set up `llama.cpp` with CUDA 12.6 support on RHEL 9.4.
